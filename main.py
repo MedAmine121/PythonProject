@@ -1,0 +1,23 @@
+import GrossSalary
+import SalaryDeductions
+import NetSalary
+name=input("Enter name: ")
+hours=int(input("Enter number of hours: "))
+loan=float(input("Enter loan: "))
+insurance=float(input("Enter Health insurance: "))
+gross_salary=GrossSalary.calculate_gross_salary(hours)
+tax=SalaryDeductions.calculate_tax(gross_salary)
+deductions=SalaryDeductions.calculate_salary_deductions(tax, loan, insurance)
+net_salary=NetSalary.calculate_net_salary(gross_salary, deductions)
+print("Name:",name)
+print("Hour:",hours)
+print()
+print("Gross Salary: Php",gross_salary)
+print()
+print("Tax: Php",tax)
+print("Loan: Php",loan)
+print("Insurance: Php",insurance)
+print()
+print("Total deductions: Php",deductions)
+print()
+print("Net Salary: Php",net_salary)
